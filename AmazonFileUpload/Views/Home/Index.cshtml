@@ -1,0 +1,29 @@
+@model AmazonFileUpload.ViewModels.FileUploadViewModel
+
+@{
+    ViewBag.Title = "Upload File";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="topleveldiv" class="topleveldivclass">
+
+    <div id="filelistdiv" class="filelistdivclass">
+
+    </div>
+
+    <div id="fileuploaddiv" class="fileuploaddivclass">
+
+        <form action="@Model.FormAction" method="@Model.FormMethod" enctype="@Model.FormEnclosureType">
+            <input type="hidden" name="key" value="@Model.FileId" />
+            <input type="hidden" name="AWSAccessKeyId" value="@Model.AWSAccessKey" />
+            <input type="hidden" name="acl" value="@Model.Acl" />
+            <input type="hidden" name="policy" value="@Model.Base64EncodedPolicy" />
+            <input type="hidden" name="signature" value="@Model.Signature" />
+            <input type="hidden" name="redirect" value="@Model.RedirectUrl" />
+            <div>Please specify a file for upload: <input type="file" name="file" size="100" /></div>
+            <input type="submit" value="Upload" />
+        </form>
+    
+    </div>
+
+</div>
