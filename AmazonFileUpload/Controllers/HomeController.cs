@@ -6,8 +6,6 @@ namespace AmazonFileUpload.Controllers
 {
     public class HomeController : Controller
     {
-        //
-        // GET: /File/
         public ActionResult Index()
         {
             var fileStorageProvider = new AmazonS3FileStorageProvider();
