@@ -15,7 +15,7 @@ namespace AmazonFileUpload.ViewModels
             // Document that describes the POST form upload metadata for Amazon S3
             // http://doc.s3.amazonaws.com/proposals/post.html#The_form_declaration
 
-            FormAction = "http://" + bucketName + ".s3.amazonaws.com/";
+            FormAction = string.Format("https://{0}.s3.amazonaws.com/", bucketName);
             FormMethod = "post";
             FormEnclosureType = "multipart/form-data";
 
