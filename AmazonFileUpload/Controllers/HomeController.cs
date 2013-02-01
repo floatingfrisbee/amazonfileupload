@@ -13,7 +13,7 @@ namespace AmazonFileUpload.Controllers
             var fileUploadViewModel = new FileUploadViewModel(fileStorageProvider.PublicKey,
                                                               fileStorageProvider.PrivateKey,
                                                               fileStorageProvider.BucketName,
-                                                              Request.Url.AbsoluteUri + "home/complete");
+                                                              string.Format("{0}home/complete", Request.Url.AbsoluteUri));
 
             fileUploadViewModel.SetPolicy(fileStorageProvider.GetPolicyString(
                             fileUploadViewModel.FileId, fileUploadViewModel.RedirectUrl));
